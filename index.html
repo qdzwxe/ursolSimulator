@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://devadmin.bazirim.life/api/maze -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GemTD Ursol Simulator</title>
+    <link rel="stylesheet" href="./src/styles.css" media="all">
+    <link rel="stylesheet" href="./src/toastr.css">
+    <link id="layuicss-laydate" rel="stylesheet" href="./src/laydate.css" media="all">
+    <link id="layuicss-layer" rel="stylesheet" href="./src/layer.css" media="all">
+    <link id="layuicss-skincodecss" rel="stylesheet" href="./src/code.css" media="all">
+</head>
+
+<body>
+    <div id="box">
+        <div id="work">
+            <span class="clear">清空迷宫</span>
+            <span id="before" class="before" onclick="before()">上一步</span>
+            <span id="next" class="next" onclick="next()">下一步</span>
+            <span>当前花费金币：</span>
+            <span class="spend">0</span>
+            <span id="left" class="move" onclick="move(7)">左移</span>
+            <span id="up" class="move" onclick="move(1)">上移</span>
+            <span id="down" class="move" onclick="move(5)">下移</span>
+            <span id="right" class="move" onclick="move(3)">右移</span>
+        </div>
+        <div id="maze">
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="point">0</li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="point">4</li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="point">3</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="point">1</li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="point">2</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="route"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="point">5</li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="route"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="point">6</li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+        </div>
+        <div id="menu">
+            <ul class="skill">
+                <li>
+                    <img title="旋风" src="./pics/s1.png">
+                </li>
+            </ul>
+            <ul class="skill">
+                <li>
+                    <img title="VS" src="./pics/s2.png">
+                </li>
+            </ul>
+            <ul class="selected">
+                <li>
+                    <img title="石头" src="./pics/0.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="B" src="./pics/b.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="D" src="./pics/d.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="E" src="./pics/e.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="G" src="./pics/g.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="P" src="./pics/p.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="Q" src="./pics/q.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="R" src="./pics/r.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="Y" src="./pics/y.png" alt="">
+                </li>
+            </ul>
+            <ul class="max">
+                <li>max</li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="白银" src="./pics/11.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="白银骑士" src="./pics/12.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="粉红钻石" src="./pics/13.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="巨型粉红钻石" src="./pics/14.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="柯伊诺尔-光明之山" src="./pics/15.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="孔雀石" src="./pics/21.jpg" alt="">
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <img title="鲜艳的孔雀石" src="./pics/22.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="铀238" src="./pics/23.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="铀235" src="./pics/24.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="衰变凯帕铀" src="./pics/25.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="星彩红宝石" src="./pics/31.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="血红火山" src="./pics/32.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="鸡血石" src="./pics/33.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="古代的鸡血石" src="./pics/34.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="黑王子-皇冠红宝石" src="./pics/35.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="玉" src="./pics/41.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="海洋青玉" src="./pics/42.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="花果山仙玉" src="./pics/43.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="金刚石库利南" src="./pics/44.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="芙蓉石" src="./pics/51.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="吉祥的中国玉" src="./pics/52.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="迷人的青金石" src="./pics/53.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="金色陛下" src="./pics/54.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="黄金" src="./pics/61.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="埃及金" src="./pics/62.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="黑暗翡翠" src="./pics/63.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="翡翠魔像" src="./pics/64.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="帕拉伊巴碧玺" src="./pics/65.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="精心雕琢的帕拉伊巴碧玺" src="./pics/66.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="斯里兰卡之星" src="./pics/67.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="深海珍珠" src="./pics/71.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="黑色猫眼石" src="./pics/72.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="天然祖母绿" src="./pics/73.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="红珊瑚" src="./pics/74.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="卡门-露西亚" src="./pics/75.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="黄彩蓝宝石" src="./pics/81.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="北地豹眼石" src="./pics/82.jpg" alt="">
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <img title="星光蓝宝石" src="./pics/83.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="诱捕石板" src="./pics/91.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="瘴气石板" src="./pics/92.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="洪流石板" src="./pics/93.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="嗥叫石板" src="./pics/94.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="酸雾石板" src="./pics/95.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="麻痹石板" src="./pics/96.jpg" alt="">
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <img title="恐吓石板" src="./pics/97.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="虚无石板" src="./pics/98.jpg" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="黑曜石" src="./pics/101.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="玛瑙" src="./pics/102.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="傲娇的虾妹石" src="./pics/104.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="鸽卵石" src="./pics/105.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="燃烧火山" src="./pics/103.png" alt="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img title="镇宅之石" src="./pics/106.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div id="data">
+            <p>
+                <span>[0点 -> 1点]：</span>
+                <span id="dis0">16</span>
+            </p>
+            <p>
+                <span>[1点 -> 2点]：</span>
+                <span id="dis1">28</span>
+            </p>
+            <p>
+                <span>[2点 -> 3点]：</span>
+                <span id="dis2">14</span>
+            </p>
+            <p>
+                <span>[3点 -> 4点]：</span>
+                <span id="dis3">14</span>
+            </p>
+            <p>
+                <span>[4点 -> 5点]：</span>
+                <span id="dis4">28</span>
+            </p>
+            <p>
+                <span>[5点 -> 6点]：</span>
+                <span id="dis5">16</span>
+            </p>
+            <p>
+                <span>总长：</span>
+                <span id="dis">116</span>
+            </p>
+        </div>
+        <br>
+        <div id="sl">
+            <span id="output" class="save" onclick="output()">导出</span>
+            <span id="input" class="load" onclick="input()">导入</span>
+            <span id="input2" class="load" onclick="input2()">外部导入</span>
+            <br><br><br>
+            <span id="save1" class="save" onclick="save(1)">保存1</span>
+            <span id="load1" class="load" onclick="load(1)">读取1</span>
+            <br><br>
+            <span id="save2" class="save" onclick="save(2)">保存2</span>
+            <span id="load2" class="load" onclick="load(2)">读取2</span>
+            <br><br>
+            <span id="save3" class="save" onclick="save(3)">保存3</span>
+            <span id="load3" class="load" onclick="load(3)">读取3</span>
+            <br><br>
+            <span id="save4" class="save" onclick="save(4)">保存4</span>
+            <span id="load4" class="load" onclick="load(4)">读取4</span>
+            <br><br>
+            <span id="save5" class="save" onclick="save(5)">保存5</span>
+            <span id="load5" class="load" onclick="load(5)">读取5</span>
+            <br><br>
+        </div>
+    </div>
+    <script src="./src/jquery.min.js.download"></script>
+    <script src="./src/layui.all.js.download"></script>
+    <script src="./src/toastr.min.js.download"></script>
+    <script src="./src/gemtd.js"></script>
+</body>
+
+</html>

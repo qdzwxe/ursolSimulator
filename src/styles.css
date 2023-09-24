@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#maze li {
+    width: 20px;
+    height: 20px;
+    float: left;
+    border: 1px solid rgba(75, 75, 75, .5);
+    list-style: none;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+#box {
+    width: 100%;
+    height: 945px;
+}
+
+.disable {
+    background-color: rgba(251, 233, 70, 0.5);
+}
+
+.point {
+    background: red;
+    text-align: center;
+    color: white;
+}
+
+.route {
+    background: #dcdcdc;
+}
+
+#maze {
+    height: 814px;
+    width: 778px;
+    float: left;
+    background-color: rgb(31, 41, 55);
+}
+
+#menu {
+    width: 178px;
+    height: 814px;
+    overflow: auto;
+    float: left;
+}
+
+#menu li {
+    float: left;
+    border: 1px solid #a0a0a0;
+    list-style: none;
+    margin-left: -1px;
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+}
+
+#menu ul li:nth-child(1) {
+    width: 35px;
+    height: 35px;
+}
+
+.selected li {
+    background: white;
+    color: white;
+}
+
+.skill img {
+    width: 24px;
+}
+
+body {
+    background: #111827;
+    padding: 20px;
+}
+
+#menu img {
+    width: 30px;
+}
+
+#work {
+    padding: 10px;
+    user-select: none;
+}
+
+#work span {
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.clear {
+    background: #dc2626;
+    cursor: pointer;
+}
+
+.before {
+    background: #14532d;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.next {
+    background: #ca8a04;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#up {
+    background: #008080;
+    cursor: pointer;
+}
+
+#down {
+    background: #800080;
+    cursor: pointer;
+}
+
+#left {
+    background: #008000;
+    cursor: pointer;
+}
+
+#right {
+    background: #808000;
+    cursor: pointer;
+}
+
+#sl span{
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.load {
+    background: #ca8a04;
+    cursor: pointer;
+}
+
+.save {
+    background: #14532d;
+    cursor: pointer;
+}
+
+#maze img {
+    width: 22px;
+}
+
+.max li {
+    color: red;
+    font-weight: 999;
+    line-height: 30px;
+}
+
+.max-title {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    color: red;
+}
+
+
+#data {
+    color: white;
+}
